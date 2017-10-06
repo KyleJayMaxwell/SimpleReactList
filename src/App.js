@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 export default class App extends Component {
@@ -10,10 +9,14 @@ export default class App extends Component {
       items: []
     };
   }
+  onChange = (event) => {
+    this.setState({term: event.target.value});
+  }
 
   render() {
     return (
-      <div></div>
+      <div>  <input value={this.state.term} onChange={this.onChange} />
+</div>
     );
   }
 }
